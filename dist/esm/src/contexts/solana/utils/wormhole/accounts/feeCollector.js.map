@@ -1,0 +1,1 @@
+{"version":3,"file":"feeCollector.js","sourceRoot":"","sources":["../../../../../../../../src/contexts/solana/utils/wormhole/accounts/feeCollector.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,aAAa,EAAE,MAAM,aAAa,CAAC;AAE5C,MAAM,UAAU,qBAAqB,CACnC,iBAAoC;IAEpC,OAAO,aAAa,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,eAAe,CAAC,CAAC,EAAE,iBAAiB,CAAC,CAAC;AAC1E,CAAC"}

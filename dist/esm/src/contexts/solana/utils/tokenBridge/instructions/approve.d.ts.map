@@ -1,0 +1,1 @@
+{"version":3,"file":"approve.d.ts","sourceRoot":"","sources":["../../../../../../../../src/contexts/solana/utils/tokenBridge/instructions/approve.ts"],"names":[],"mappings":"AACA,OAAO,EAAa,iBAAiB,EAAE,MAAM,iBAAiB,CAAC;AAG/D,wBAAgB,uCAAuC,CACrD,oBAAoB,EAAE,iBAAiB,EACvC,YAAY,EAAE,iBAAiB,EAC/B,KAAK,EAAE,iBAAiB,EACxB,MAAM,EAAE,MAAM,GAAG,MAAM,oDAQxB"}

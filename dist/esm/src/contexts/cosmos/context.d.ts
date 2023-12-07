@@ -1,0 +1,56 @@
+/// <reference types="node" />
+import { WormholeWrappedInfo } from '@certusone/wormhole-sdk';
+import { BigNumber } from 'ethers';
+import { ChainId, ChainName, Context, NATIVE, ParsedMessage, ParsedRelayerMessage, ParsedRelayerPayload, TokenId } from '../../types';
+import { ForeignAssetCache } from '../../utils';
+import { WormholeContext } from '../../wormhole';
+import { TokenBridgeAbstract } from '../abstracts/tokenBridge';
+import { CosmosContracts } from './contracts';
+import { CosmosTransaction } from './types';
+export declare class CosmosContext<T extends WormholeContext> extends TokenBridgeAbstract<CosmosTransaction> {
+    readonly type = Context.COSMOS;
+    readonly contracts: CosmosContracts<T>;
+    readonly context: T;
+    readonly chain: ChainName;
+    private static FETCHING_TM_CLIENT;
+    private static CLIENT_MAP;
+    private foreignAssetCache;
+    constructor(context: T, chain: ChainName, foreignAssetCache: ForeignAssetCache);
+    protected getTxGasFee(txId: string, chain: ChainName | ChainId): Promise<BigNumber | undefined>;
+    send(token: TokenId | 'native', amount: string, sendingChain: ChainName | ChainId, senderAddress: string, recipientChain: ChainName | ChainId, recipientAddress: string, relayerFee: any): Promise<CosmosTransaction>;
+    sendWithPayload(token: TokenId | 'native', amount: string, sendingChain: ChainName | ChainId, senderAddress: string, recipientChain: ChainName | ChainId, recipientAddress: string, payload: any): Promise<CosmosTransaction>;
+    estimateSendGas(token: TokenId | typeof NATIVE, amount: string, sendingChain: ChainName | ChainId, senderAddress: string, recipientChain: ChainName | ChainId, recipientAddress: string): Promise<BigNumber>;
+    estimateClaimGas(destChain: ChainName | ChainId, VAA: Uint8Array): Promise<BigNumber>;
+    formatAddress(address: string): Uint8Array;
+    parseAddress(address: any): string;
+    formatAssetAddress(address: string): Promise<Uint8Array>;
+    private buildTokenId;
+    parseAssetAddress(address: any): Promise<string>;
+    getForeignAsset(tokenId: TokenId, chain: ChainId | ChainName): Promise<string | null>;
+    getGatewayForeignAsset(tokenId: TokenId, chain: ChainId | ChainName): Promise<string | null>;
+    private CW20AddressToFactory;
+    getTranslatorAddress(): string;
+    deriveIBCDenom(denom: string, chain: ChainId | ChainName): Promise<string | null>;
+    getIbcDestinationChannel(chain: ChainId | ChainName): Promise<string>;
+    getIbcSourceChannel(chain: ChainId | ChainName): Promise<string>;
+    private isNativeDenom;
+    getWhForeignAsset(tokenId: TokenId, chain: ChainName | ChainId): Promise<string | null>;
+    mustGetForeignAsset(tokenId: TokenId, chain: ChainName | ChainId): Promise<string>;
+    getNativeBalance(walletAddress: string, chain: ChainName | ChainId, asset?: string): Promise<BigNumber>;
+    getTokenBalance(walletAddress: string, tokenId: TokenId, chain: ChainName | ChainId): Promise<BigNumber | null>;
+    getTokenBalances(walletAddress: string, tokenIds: TokenId[], chain: ChainName | ChainId): Promise<(BigNumber | null)[]>;
+    redeem(destChain: ChainName | ChainId, signedVAA: Uint8Array, overrides: any, payerAddr?: any): Promise<CosmosTransaction>;
+    isTransferCompleted(destChain: ChainName | ChainId, signedVaa: string): Promise<boolean>;
+    fetchTokenDecimals(tokenAddr: string, chain: ChainName | ChainId): Promise<number>;
+    private ibcDenomToCW20;
+    getMessage(id: string, chain: ChainName | ChainId, parseRelayerPayload?: boolean): Promise<ParsedMessage | ParsedRelayerMessage>;
+    parseRelayerPayload(payload: Buffer): ParsedRelayerPayload;
+    private getQueryClient;
+    private getTmClient;
+    private getCosmWasmClient;
+    getTokenBridgeAddress(chain: ChainName): string;
+    getCurrentBlock(): Promise<number>;
+    getOriginalAsset(chain: ChainName | ChainId, wrappedAddress: string): Promise<WormholeWrappedInfo>;
+    getWrappedNativeTokenId(chain: ChainName | ChainId): Promise<TokenId>;
+}
+//# sourceMappingURL=context.d.ts.map

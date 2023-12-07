@@ -1,0 +1,1 @@
+{"version":3,"file":"transferWithPayload.d.ts","sourceRoot":"","sources":["../../../../../../../../src/contexts/solana/utils/tokenBridge/accounts/transferWithPayload.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,iBAAiB,EAAE,MAAM,iBAAiB,CAAC;AAG/D,wBAAgB,sBAAsB,CACpC,YAAY,EAAE,iBAAiB,GAC9B,SAAS,CAEX;AAED,wBAAgB,wBAAwB,CACtC,YAAY,EAAE,iBAAiB,GAC9B,SAAS,CAEX"}

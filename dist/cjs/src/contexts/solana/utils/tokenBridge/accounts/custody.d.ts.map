@@ -1,0 +1,1 @@
+{"version":3,"file":"custody.d.ts","sourceRoot":"","sources":["../../../../../../../../src/contexts/solana/utils/tokenBridge/accounts/custody.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,iBAAiB,EAAE,MAAM,iBAAiB,CAAC;AAG/D,wBAAgB,gBAAgB,CAC9B,oBAAoB,EAAE,iBAAiB,EACvC,IAAI,EAAE,iBAAiB,GACtB,SAAS,CAEX"}
